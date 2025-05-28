@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace safeheat_backend_dotnet.Domain.Entities;
-public class Abrigo
+public class AbrigoEntity
 {
     public int Id { get; set; }
 
@@ -23,5 +23,5 @@ public class Abrigo
     public int CapacidadeAtual { get; set; }
 
     // Relacionamento 1:N
-    public ICollection<RegistroDeEntrada> RegistrosDeEntrada { get; set; }
+    public ICollection<RegistroDeEntradaEntity> RegistrosDeEntrada { get; set; }
 }

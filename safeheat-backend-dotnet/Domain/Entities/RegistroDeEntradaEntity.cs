@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace safeheat_backend_dotnet.Domain.Entities;
 
-public class RegistroDeEntrada
+public class RegistroDeEntradaEntity
 {
     public int Id { get; set; }
 
@@ -17,5 +17,5 @@ public class RegistroDeEntrada
 
     // Propriedade de navegação
     [ForeignKey("AbrigoId")]
-    public Abrigo Abrigo { get; set; }
+    public AbrigoEntity Abrigo { get; set; }
 }

@@ -10,6 +10,6 @@ public class ApplicationContext : DbContext
 
     }
 
-    public DbSet<Abrigo> Abrigo { get; set; }
-    public DbSet<RegistroDeEntrada> RegistroDeEntrada { get; set; }
+    public DbSet<AbrigoEntity> Abrigo { get; set; }
+    public DbSet<RegistroDeEntradaEntity> RegistroDeEntrada { get; set; }
 }
