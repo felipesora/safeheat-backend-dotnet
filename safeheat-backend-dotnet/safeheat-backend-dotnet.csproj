@@ -19,8 +19,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Application\Interfaces\" />
-  </ItemGroup>
-
 </Project>
