@@ -14,7 +14,6 @@ public class RegistroDeEntradaEntity
 
     public DateTime DataEntrada { get; set; } = DateTime.Now;
 
-    // Chave estrangeira
     public int AbrigoId { get; set; }
 
     // Propriedade de navegação
