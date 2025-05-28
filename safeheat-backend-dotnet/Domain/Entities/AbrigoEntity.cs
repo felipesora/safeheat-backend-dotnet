@@ -1,8 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace safeheat_backend_dotnet.Domain.Entities;
+
+[Table("SH_ABRIGOS")]
 public class AbrigoEntity
 {
+    [Key]
     public int Id { get; set; }
 
     [Required]

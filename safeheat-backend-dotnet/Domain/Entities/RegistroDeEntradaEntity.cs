@@ -3,8 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace safeheat_backend_dotnet.Domain.Entities;
 
+[Table("SH_REGISTOS_ENTRADA")]
 public class RegistroDeEntradaEntity
 {
+    [Key]
     public int Id { get; set; }
 
     [Required]
