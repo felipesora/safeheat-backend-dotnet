@@ -19,4 +19,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Presentation\Controllers\Api\" />
+    <Folder Include="Presentation\Controllers\Web\" />
+  </ItemGroup>
+
 </Project>
