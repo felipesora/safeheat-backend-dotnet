@@ -12,4 +12,15 @@ public class ApplicationContext : DbContext
 
     public DbSet<AbrigoEntity> Abrigo { get; set; }
     public DbSet<RecursoDisponivelEntity> RecursoDisponivel { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<RecursoDisponivelEntity>()
+            .HasOne(r => r.Abrigo)
+            .WithMany(a => a.RecursosDisponiveis)
+            .HasForeignKey(r => r.AbrigoId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
 }

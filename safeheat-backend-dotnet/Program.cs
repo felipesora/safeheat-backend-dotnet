@@ -14,7 +14,7 @@ builder.Services.AddDbContext<ApplicationContext>(options => {
 builder.Services.AddTransient<IAbrigoRepository, AbrigoRepository>();
 builder.Services.AddTransient<IAbrigoApplication, AbrigoApplication>();
 builder.Services.AddTransient<IRecursoDisponivelRepository, RecursoDisponivelRepository>();
-builder.Services.AddTransient<IRegistroDeEntradaApplication, RegistroDeEntradaApplication>();
+builder.Services.AddTransient<IRecursoDisponivelApplication, RecursoDisponivelApplication>();
 
 // Serviços MVC + Swagger
 builder.Services.AddControllersWithViews();

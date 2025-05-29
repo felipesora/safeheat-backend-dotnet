@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace safeheat_backend_dotnet.Domain.Entities;
 
@@ -20,5 +21,6 @@ public class RecursoDisponivelEntity
     public int AbrigoId { get; set; }
 
     [ForeignKey("AbrigoId")]
+    [JsonIgnore]
     public AbrigoEntity Abrigo { get; set; }
 }

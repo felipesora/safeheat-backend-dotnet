@@ -1,5 +1,4 @@
-﻿using Humanizer;
-using safeheat_backend_dotnet.Application.DTOs;
+﻿using safeheat_backend_dotnet.Application.DTOs;
 using safeheat_backend_dotnet.Application.Interfaces;
 using safeheat_backend_dotnet.Domain.Entities;
 using safeheat_backend_dotnet.Domain.Interfaces;

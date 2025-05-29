@@ -1,4 +1,5 @@
-﻿using safeheat_backend_dotnet.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using safeheat_backend_dotnet.Domain.Entities;
 using safeheat_backend_dotnet.Domain.Interfaces;
 using safeheat_backend_dotnet.Infrastructure.Data.AppData;
 
@@ -15,7 +16,9 @@ public class AbrigoRepository : IAbrigoRepository
 
     public IEnumerable<AbrigoEntity>? ObterTodos()
     {
-        var abrigos = _context.Abrigo.ToList();
+        var abrigos = _context.Abrigo
+            .Include(a => a.RecursosDisponiveis)
+            .ToList();
 
         if (abrigos.Any())
         {
@@ -27,7 +30,9 @@ public class AbrigoRepository : IAbrigoRepository
 
     public AbrigoEntity? ObterPorId(int id)
     {
-        var abrigo = _context.Abrigo.Find(id);
+        var abrigo = _context.Abrigo
+        .Include(a => a.RecursosDisponiveis)
+        .FirstOrDefault(a => a.Id == id);
 
         if (abrigo is not null)
         {

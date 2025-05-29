@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -29,20 +28,20 @@ namespace safeheat_backend_dotnet.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SH_REGISTOS_ENTRADA",
+                name: "SH_RECURSOS_DISPONIVEIS",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    NomePessoa = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    DataEntrada = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
+                    Nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Quantidade = table.Column<int>(type: "NUMBER(10)", nullable: false),
                     AbrigoId = table.Column<int>(type: "NUMBER(10)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SH_REGISTOS_ENTRADA", x => x.Id);
+                    table.PrimaryKey("PK_SH_RECURSOS_DISPONIVEIS", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SH_REGISTOS_ENTRADA_SH_ABRIGOS_AbrigoId",
+                        name: "FK_SH_RECURSOS_DISPONIVEIS_SH_ABRIGOS_AbrigoId",
                         column: x => x.AbrigoId,
                         principalTable: "SH_ABRIGOS",
                         principalColumn: "Id",
@@ -50,8 +49,8 @@ namespace safeheat_backend_dotnet.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SH_REGISTOS_ENTRADA_AbrigoId",
-                table: "SH_REGISTOS_ENTRADA",
+                name: "IX_SH_RECURSOS_DISPONIVEIS_AbrigoId",
+                table: "SH_RECURSOS_DISPONIVEIS",
                 column: "AbrigoId");
         }
 
@@ -59,7 +58,7 @@ namespace safeheat_backend_dotnet.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SH_REGISTOS_ENTRADA");
+                name: "SH_RECURSOS_DISPONIVEIS");
 
             migrationBuilder.DropTable(
                 name: "SH_ABRIGOS");
