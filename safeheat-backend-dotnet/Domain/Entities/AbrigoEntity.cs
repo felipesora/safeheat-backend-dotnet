@@ -26,6 +26,6 @@ public class AbrigoEntity
     [Range(0, int.MaxValue)]
     public int CapacidadeAtual { get; set; }
 
-    // Relacionamento 1:N
-    public ICollection<RegistroDeEntradaEntity> RegistrosDeEntrada { get; set; }
+    public ICollection<RecursoDisponivelEntity> RecursosDisponiveis { get; set; } = new List<RecursoDisponivelEntity>();
+
 }

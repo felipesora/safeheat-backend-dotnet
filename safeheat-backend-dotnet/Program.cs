@@ -13,11 +13,13 @@ builder.Services.AddDbContext<ApplicationContext>(options => {
 
 builder.Services.AddTransient<IAbrigoRepository, AbrigoRepository>();
 builder.Services.AddTransient<IAbrigoApplication, AbrigoApplication>();
-builder.Services.AddTransient<IRegistroDeEntradaRepository, RegistroDeEntradaRepository>();
+builder.Services.AddTransient<IRecursoDisponivelRepository, RecursoDisponivelRepository>();
 builder.Services.AddTransient<IRegistroDeEntradaApplication, RegistroDeEntradaApplication>();
 
-// Add services to the container.
+// Serviços MVC + Swagger
 builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -26,6 +28,12 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+else
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.UseStaticFiles();
 
 app.UseRouting();

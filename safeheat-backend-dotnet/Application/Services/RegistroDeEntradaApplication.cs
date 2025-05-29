@@ -7,9 +7,9 @@ namespace safeheat_backend_dotnet.Application.Services;
 
 public class RegistroDeEntradaApplication : IRegistroDeEntradaApplication
 {
-    private readonly IRegistroDeEntradaRepository _registroApplication;
+    private readonly IRecursoDisponivelRepository _registroApplication;
 
-    public RegistroDeEntradaApplication(IRegistroDeEntradaRepository registroApplication)
+    public RegistroDeEntradaApplication(IRecursoDisponivelRepository registroApplication)
     {
         _registroApplication = registroApplication;
     }

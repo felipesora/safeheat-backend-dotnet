@@ -11,5 +11,5 @@ public class ApplicationContext : DbContext
     }
 
     public DbSet<AbrigoEntity> Abrigo { get; set; }
-    public DbSet<RegistroDeEntradaEntity> RegistroDeEntrada { get; set; }
+    public DbSet<RecursoDisponivelEntity> RecursoDisponivel { get; set; }
 }

@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using safeheat_backend_dotnet.Models;
 
-namespace safeheat_backend_dotnet.Controllers
+namespace safeheat_backend_dotnet.Presentation.Controllers.Web
 {
     public class HomeController : Controller
     {

@@ -46,9 +46,9 @@ public class AbrigoRepository : IAbrigoRepository
 
             return abrigo;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw new Exception("Não foi possivel salvar o abrigo");
+            throw new Exception("Não foi possível salvar o abrigo", ex);
         }
 
     }
