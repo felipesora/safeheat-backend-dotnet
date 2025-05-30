@@ -1,0 +1,61 @@
+﻿@model safeheat_backend_dotnet.Application.Dtos.RecursoDisponivelDto
+
+@{
+    ViewData["Title"] = "Editar Recurso";
+}
+
+<h1 class="titulo-pagina">@ViewData["Title"]</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@ViewBag.Id" />
+    <input type="hidden" asp-for="AbrigoId" />
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Quantidade"></label>
+        <input asp-for="Quantidade" type="number" class="form-control" />
+        <span asp-validation-for="Quantidade" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a asp-action="Index" asp-route-abrigoId="@Model.AbrigoId" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        background-color: #D2D2D2;
+    }
+
+    .titulo-pagina {
+        text-align: center;
+    }
+
+    .botoes {
+        margin-top: 20px;
+    }
+
+    input.form-control {
+        background-color: #F4F4F4;
+        border: 1px solid #AAA;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        font-size: 18px
+    }
+
+</style>

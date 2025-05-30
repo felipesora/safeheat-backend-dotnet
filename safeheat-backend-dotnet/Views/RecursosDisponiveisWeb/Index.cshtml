@@ -1,0 +1,107 @@
+﻿@model IEnumerable<safeheat_backend_dotnet.Domain.Entities.RecursoDisponivelEntity>
+
+@{
+    ViewData["Title"] = "Recursos do Abrigo";
+    var abrigoId = ViewBag.AbrigoId as int? ?? 0;
+}
+
+<h1 class="titulo-pagina">@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" asp-route-abrigoId="@abrigoId" class="btn btn-primary">Cadastrar Novo Recurso</a>
+    <a asp-controller="AbrigosWeb" asp-action="Index" class="btn btn-secondary">Voltar para Abrigos</a>
+</p>
+
+<table class="table tabela-recursos">
+    <thead class="cabecalho-tabela">
+        <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody class="corpo-tabela">
+        @foreach (var recurso in Model)
+        {
+            <tr class="linha-tabela">
+                <td>@recurso.Nome</td>
+                <td>@recurso.Quantidade</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@recurso.Id" class="btn btn-sm btn-warning botao-editar">Editar</a>
+
+                    <form asp-action="Delete" asp-route-id="@recurso.Id" asp-route-abrigoId="@abrigoId" method="post" style="display:inline-block" onsubmit="return confirm('Confirma exclusão?');">
+                        <button type="submit" class="btn btn-sm btn-danger botao-excluir">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    body {
+        background-color: #D2D2D2;
+    }
+
+    .titulo-pagina {
+        text-align: center;
+    }
+
+    .cabecalho-tabela th {
+        background-color: #444444;
+        color: #FFFFFF;
+    }
+
+    .corpo-tabela {
+        background-color: #FFFFFF;
+    }
+
+    .linha-tabela:hover {
+        background-color: #EDEDED;
+    }
+
+    .botao-editar {
+        background-color: #2D4263;
+        border: none;
+        color: #FFFFFF;
+    }
+
+        .botao-editar:hover {
+            background-color: #305288;
+            color: #FFFFFF;
+        }
+
+    .botao-excluir {
+        background-color: #810000;
+        border: none;
+        color: #FFFFFF;
+    }
+
+        .botao-excluir:hover {
+            background-color: #812727;
+            color: #FFFFFF;
+        }
+
+    .form-excluir {
+        display: inline-block;
+    }
+    
+    .cabecalho-tabela th:nth-child(1) { 
+        text-align: left;
+    }
+
+    .cabecalho-tabela th:nth-child(2),
+    .cabecalho-tabela th:nth-child(3) {
+        text-align: center;
+    }
+
+    .tabela-recursos td:nth-child(1) {
+        text-align: left;
+    }
+
+    .tabela-recursos td:nth-child(2),
+    .tabela-recursos td:nth-child(3){
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>

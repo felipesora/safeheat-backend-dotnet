@@ -1,0 +1,135 @@
+﻿@model IEnumerable<safeheat_backend_dotnet.Domain.Entities.AbrigoEntity>
+
+@{
+    ViewData["Title"] = "Lista de Abrigos";
+}
+
+<h1 class="titulo-pagina">@ViewData["Title"]</h1>
+
+<p class="container-botao-novo">
+    <a asp-action="Create" class="btn btn-primary botao-novo-abrigo">Cadastrar Novo Abrigo</a>
+</p>
+
+<table class="table tabela-abrigos">
+    <thead class="cabecalho-tabela">
+        <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Capacidade Total</th>
+            <th>Capacidade Atual</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody class="corpo-tabela">
+        @foreach (var abrigo in Model)
+        {
+            <tr class="linha-tabela">
+                <td>@abrigo.Nome</td>
+                <td>@abrigo.Endereco</td>
+                <td>@abrigo.Cidade</td>
+                <td>@abrigo.CapacidadeTotal</td>
+                <td>@abrigo.CapacidadeAtual</td>
+                <td class="coluna-acoes">
+                    <a asp-action="Recursos" asp-route-abrigoId="@abrigo.Id" class="btn btn-sm btn-info botao-recursos">Ver Recursos</a>
+
+                    <a asp-action="Edit" asp-route-id="@abrigo.Id" class="btn btn-sm btn-warning botao-editar">Editar</a>
+
+                    <form asp-action="Delete" asp-route-id="@abrigo.Id" method="post" class="form-excluir" onsubmit="return confirm('Confirma exclusão?');">
+                        <button type="submit" class="btn btn-sm btn-danger botao-excluir">Excluir</button>
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    body {
+        background-color: #D2D2D2;
+    }
+
+    .titulo-pagina {
+        text-align: center;
+    }
+
+    .cabecalho-tabela th {
+        background-color: #444444;
+        color: #FFFFFF;
+    }
+
+    .corpo-tabela {
+        background-color: #FFFFFF;
+    }
+
+    .linha-tabela:hover {
+        background-color: #EDEDED;
+    }
+
+    .botao-editar {
+        background-color: #2D4263;
+        border: none;
+        color: #FFFFFF;
+    }
+
+    .botao-editar:hover {
+        background-color: #305288;
+        color: #FFFFFF;
+    }
+
+    .botao-excluir {
+        background-color: #810000;
+        border: none;
+        color: #FFFFFF;
+    }
+
+    .botao-excluir:hover {
+        background-color: #812727;
+        color: #FFFFFF;
+    }
+
+    .botao-recursos {
+        background-color: #02383C;
+        border: none;
+        color: #FFFFFF;
+    }
+
+        .botao-recursos:hover {
+            background-color: #235A5E;
+        color: #FFFFFF;
+    }
+
+    .form-excluir {
+        display: inline-block;
+    }
+
+    .tabela-abrigos td,
+    .tabela-abrigos th {
+        vertical-align: middle;
+    }
+
+    .coluna-acoes,
+    td:nth-child(4),
+    td:nth-child(5) {
+        text-align: center;
+    }
+
+    td:nth-child(1),
+    td:nth-child(2),
+    td:nth-child(3)  {
+        text-align: left;
+    }
+
+    .cabecalho-tabela th:nth-child(4), 
+    .cabecalho-tabela th:nth-child(5), 
+    .cabecalho-tabela th:nth-child(6)  {
+        text-align: center;
+    }
+
+    .cabecalho-tabela th:nth-child(1), 
+    .cabecalho-tabela th:nth-child(2),
+    .cabecalho-tabela th:nth-child(3) {
+        text-align: left;
+    }
+</style>

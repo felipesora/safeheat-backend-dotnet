@@ -1,0 +1,78 @@
+﻿@model safeheat_backend_dotnet.Application.DTOs.AbrigoDto
+
+@{
+    ViewData["Title"] = "Editar Abrigo";
+}
+
+<h1 class="titulo-pagina">@ViewData["Title"]</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-route-id="@Context.Request.RouteValues["id"]" />
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Endereco"></label>
+        <input asp-for="Endereco" class="form-control" />
+        <span asp-validation-for="Endereco" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cidade"></label>
+        <input asp-for="Cidade" class="form-control" />
+        <span asp-validation-for="Cidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CapacidadeTotal">Capacidade Total</label>
+        <input asp-for="CapacidadeTotal" type="number" class="form-control" />
+        <span asp-validation-for="CapacidadeTotal" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CapacidadeAtual">Capacidade Atual</label>
+        <input asp-for="CapacidadeAtual" type="number" class="form-control" />
+        <span asp-validation-for="CapacidadeAtual" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        background-color: #D2D2D2;
+    }
+
+    .titulo-pagina {
+        text-align: center;
+    }
+
+    .botoes {
+        margin-top: 20px;
+    }
+
+    input.form-control {
+        background-color: #F4F4F4;
+        border: 1px solid #AAA;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        font-size: 18px
+    }
+
+</style>
