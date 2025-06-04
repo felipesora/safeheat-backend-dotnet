@@ -18,6 +18,17 @@ builder.Services.AddTransient<IAbrigoApplication, AbrigoApplication>();
 builder.Services.AddTransient<IRecursoDisponivelRepository, RecursoDisponivelRepository>();
 builder.Services.AddTransient<IRecursoDisponivelApplication, RecursoDisponivelApplication>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 // Serviços MVC + Swagger
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
@@ -46,6 +57,8 @@ else
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
