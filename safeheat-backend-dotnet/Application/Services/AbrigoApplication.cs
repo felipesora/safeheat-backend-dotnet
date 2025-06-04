@@ -29,10 +29,14 @@ public class AbrigoApplication : IAbrigoApplication
         var abrigo = new AbrigoEntity
         {
             Nome = dto.Nome,
-            Endereco = dto.Endereco,
+            CEP = dto.CEP,
+            Rua = dto.Rua,
+            Numero = dto.Numero,
+            Bairro = dto.Bairro,
             Cidade = dto.Cidade,
+            Estado = dto.Estado,
             CapacidadeTotal = dto.CapacidadeTotal,
-            CapacidadeAtual = dto.CapacidadeAtual
+            OcupacaoAtual = dto.OcupacaoAtual
         };
 
         return _abrigoApplication.Salvar(abrigo);
@@ -44,10 +48,14 @@ public class AbrigoApplication : IAbrigoApplication
         {
             Id = id,
             Nome = dto.Nome,
-            Endereco = dto.Endereco,
+            CEP = dto.CEP,
+            Rua = dto.Rua,
+            Numero = dto.Numero,
+            Bairro = dto.Bairro,
             Cidade = dto.Cidade,
+            Estado = dto.Estado,
             CapacidadeTotal = dto.CapacidadeTotal,
-            CapacidadeAtual = dto.CapacidadeAtual
+            OcupacaoAtual = dto.OcupacaoAtual
         };
 
         return _abrigoApplication.Editar(id, abrigo);

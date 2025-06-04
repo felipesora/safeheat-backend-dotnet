@@ -11,7 +11,7 @@ using safeheat_backend_dotnet.Infrastructure.Data.AppData;
 namespace safeheat_backend_dotnet.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250529163628_safeheat")]
+    [Migration("20250603234716_safeheat")]
     partial class safeheat
     {
         /// <inheritdoc />
@@ -32,8 +32,13 @@ namespace safeheat_backend_dotnet.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CapacidadeAtual")
-                        .HasColumnType("NUMBER(10)");
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("CapacidadeTotal")
                         .HasColumnType("NUMBER(10)");
@@ -42,11 +47,22 @@ namespace safeheat_backend_dotnet.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("Endereco")
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("OcupacaoAtual")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Rua")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 

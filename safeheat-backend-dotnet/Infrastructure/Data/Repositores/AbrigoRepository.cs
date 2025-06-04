@@ -68,10 +68,14 @@ public class AbrigoRepository : IAbrigoRepository
                 return null;
 
             abrigoExistente.Nome = abrigo.Nome;
-            abrigoExistente.Endereco = abrigo.Endereco;
+            abrigoExistente.CEP = abrigo.CEP;
+            abrigoExistente.Rua = abrigo.Rua;
+            abrigoExistente.Numero = abrigo.Numero;
+            abrigoExistente.Bairro = abrigo.Bairro;
             abrigoExistente.Cidade = abrigo.Cidade;
+            abrigoExistente.Estado = abrigo.Estado;
             abrigoExistente.CapacidadeTotal = abrigo.CapacidadeTotal;
-            abrigoExistente.CapacidadeAtual = abrigo.CapacidadeAtual;
+            abrigoExistente.OcupacaoAtual = abrigo.OcupacaoAtual;
 
             _context.Abrigo.Update(abrigoExistente);
             _context.SaveChanges();

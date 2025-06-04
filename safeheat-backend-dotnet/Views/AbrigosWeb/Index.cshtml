@@ -17,7 +17,7 @@
             <th>Endereço</th>
             <th>Cidade</th>
             <th>Capacidade Total</th>
-            <th>Capacidade Atual</th>
+            <th>Ocupação Atual</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -26,10 +26,10 @@
         {
             <tr class="linha-tabela">
                 <td>@abrigo.Nome</td>
-                <td>@abrigo.Endereco</td>
+                <td>@abrigo.Rua, @abrigo.Numero - @abrigo.Bairro, @abrigo.Estado</td>
                 <td>@abrigo.Cidade</td>
                 <td>@abrigo.CapacidadeTotal</td>
-                <td>@abrigo.CapacidadeAtual</td>
+                <td>@abrigo.OcupacaoAtual</td>
                 <td class="coluna-acoes">
                     <a asp-action="Recursos" asp-route-abrigoId="@abrigo.Id" class="btn btn-sm btn-info botao-recursos">Ver Recursos</a>
 

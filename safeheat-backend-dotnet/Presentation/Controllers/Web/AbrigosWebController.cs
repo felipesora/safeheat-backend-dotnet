@@ -47,10 +47,14 @@ public class AbrigosWebController : Controller
         var dto = new AbrigoDto
         {
             Nome = abrigo.Nome,
-            Endereco = abrigo.Endereco,
+            CEP = abrigo.CEP,
+            Rua = abrigo.Rua,
+            Numero = abrigo.Numero,
+            Bairro = abrigo.Bairro,
             Cidade = abrigo.Cidade,
+            Estado = abrigo.Estado,
             CapacidadeTotal = abrigo.CapacidadeTotal,
-            CapacidadeAtual = abrigo.CapacidadeAtual
+            OcupacaoAtual = abrigo.OcupacaoAtual
         };
 
         return View(dto);

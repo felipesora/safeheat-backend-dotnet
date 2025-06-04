@@ -16,9 +16,27 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Endereco"></label>
-        <input asp-for="Endereco" class="form-control" />
-        <span asp-validation-for="Endereco" class="text-danger"></span>
+        <label asp-for="CEP"></label>
+        <input asp-for="CEP" class="form-control" />
+        <span asp-validation-for="CEP" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rua"></label>
+        <input asp-for="Rua" class="form-control" />
+        <span asp-validation-for="Rua" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Numero"></label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Bairro"></label>
+        <input asp-for="Bairro" class="form-control" />
+        <span asp-validation-for="Bairro" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -28,15 +46,21 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="Estado"></label>
+        <input asp-for="Estado" class="form-control" />
+        <span asp-validation-for="Estado" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <label asp-for="CapacidadeTotal">Capacidade Total</label>
         <input asp-for="CapacidadeTotal" type="number" class="form-control" />
         <span asp-validation-for="CapacidadeTotal" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="CapacidadeAtual">Capacidade Atual</label>
-        <input asp-for="CapacidadeAtual" type="number" class="form-control" />
-        <span asp-validation-for="CapacidadeAtual" class="text-danger"></span>
+        <label asp-for="OcupacaoAtual">Ocupação Atual</label>
+        <input asp-for="OcupacaoAtual" type="number" class="form-control" />
+        <span asp-validation-for="OcupacaoAtual" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar Alterações</button>

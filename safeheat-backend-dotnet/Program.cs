@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using safeheat_backend_dotnet.Application.Interfaces;
 using safeheat_backend_dotnet.Application.Services;
 using safeheat_backend_dotnet.Domain.Interfaces;
 using safeheat_backend_dotnet.Infrastructure.Data.AppData;
 using safeheat_backend_dotnet.Infrastructure.Data.Repositores;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,14 @@ builder.Services.AddTransient<IRecursoDisponivelApplication, RecursoDisponivelAp
 // Serviços MVC + Swagger
 builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SafeHeat API", Version = "v1" });
+});
 
 var app = builder.Build();
 

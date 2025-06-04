@@ -13,10 +13,22 @@ public class AbrigoEntity
     public string Nome { get; set; }
 
     [Required]
-    public string Endereco { get; set; }
+    public string CEP { get; set; }
+
+    [Required]
+    public string Rua { get; set; }
+
+    [Required]
+    public string Numero { get; set; }
+
+    [Required]
+    public string Bairro { get; set; }
 
     [Required]
     public string Cidade { get; set; }
+
+    [Required]
+    public string Estado { get; set; }
 
     [Required]
     [Range(1, int.MaxValue)]
@@ -24,7 +36,7 @@ public class AbrigoEntity
 
     [Required]
     [Range(0, int.MaxValue)]
-    public int CapacidadeAtual { get; set; }
+    public int OcupacaoAtual { get; set; }
 
     public ICollection<RecursoDisponivelEntity> RecursosDisponiveis { get; set; } = new List<RecursoDisponivelEntity>();
 
