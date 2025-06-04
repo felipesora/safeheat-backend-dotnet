@@ -24,7 +24,7 @@ Este projeto integra o desafio interdisciplinar "**Protech the Future**" da FIAP
 - ✅ Atualização da capacidade dos abrigos
 - ✅ Registro de recursos disponíveis em cada abrigo
 - ✅ Interface web (Razor Pages) para operadores da gestão pública
-- ✅ API REST com Swagger para consumo por apps externos
+- ✅ API REST com Swagger
 
 ---
 
@@ -230,3 +230,28 @@ dotnet run
 
 ## ✅ Pronto!
 Você está com o backend .NET do SafeHeat rodando, pronto para testes e uso em produção/instituições públicas.
+
+## 🎥 Demonstrações e Links Relacionados
+
+### 📽️ Vídeo de Demonstração da Solução Completa
+Veja o funcionamento completo da solução SafeHeat (Backend .NET):
+
+[🔗 Assista à demonstração](https://github.com/felipesora)
+
+### 🗣️ Vídeo Pitch do Projeto
+
+Entenda o contexto, problema, solução proposta e impacto social do SafeHeat no nosso pitch oficial:
+
+[🔗 Assista ao Pitch](https://github.com/felipesora)
+
+### ☕ Projeto Java (API para Aplicativo)
+
+Backend em Java responsável por gerenciar usuários, locais monitorados e alertas de calor consumidos pelo app:
+
+[🔗 Repositório da API Java (SafeHeat Backend Java)](https://github.com/felipesora/safeheat-backend-java)
+
+### 📱 Projeto Mobile (React Native)
+
+Frontend mobile desenvolvido com React Native, integrando as APIs de Java e .NET:
+
+[🔗 Repositório do Mobile (SafeHeat App)](https://github.com/felipesora/safeheat-frontend-mobile)
