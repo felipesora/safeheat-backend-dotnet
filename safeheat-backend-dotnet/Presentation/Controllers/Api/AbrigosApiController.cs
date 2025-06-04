@@ -98,23 +98,15 @@ public class AbrigosApiController : ControllerBase
     /// <remarks>
     /// Este endpoint recebe os dados de um novo abrigo e o registra no sistema. 
     /// É necessário enviar um objeto JSON no corpo da requisição com os dados obrigatórios:
-    /// - descricao
-    /// - prioridade (BAIXA, MEDIA, ALTA)
-    /// - status (ABERTA, EM_ANDAMENTO, FINALIZADA)
-    /// - dataFinalizacao
-    /// - responsavel
-    /// - placaMoto
-    /// 
-    /// Exemplo de corpo (JSON):
-    ///{
-    ///"descricao": "Arrumar motor da moto",
-    ///"prioridade": "MEDIA",
-    ///"status": "EM_ANDAMENTO",
-    ///"dataAbertura": "2025-05-13T21:59:20.953Z",
-    ///"dataFinalizacao": "2025-06-07T09:00:00.953Z",
-    ///"responsavel": "Felipe Sora",
-    ///"placaMoto": "ABC1234"
-    ///}
+    /// - Nome do Abrigo
+    /// - CEP
+    /// - Rua
+    /// - Número
+    /// - Bairro
+    /// - Cidade
+    /// - Estado
+    /// - Capacidade Total
+    /// - Ocupação Atual
     /// </remarks>
     /// <param name="entity">Objeto com os dados do novo abrigo.</param>
     /// <returns>Retorna 200 OK com o abrigo cadastrado ou 400 Bad Request em caso de erro.</returns>
