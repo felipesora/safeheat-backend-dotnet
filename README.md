@@ -236,7 +236,7 @@ Você está com o backend .NET do SafeHeat rodando, pronto para testes e uso em 
 ### 📽️ Vídeo de Demonstração da Solução Completa
 Veja o funcionamento completo da solução SafeHeat (Backend .NET):
 
-[🔗 Assista à demonstração](https://github.com/felipesora)
+[🔗 Assista à demonstração](https://www.youtube.com/watch?v=dxxsXDfPdro)
 
 ### 🗣️ Vídeo Pitch do Projeto
 
