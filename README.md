@@ -242,7 +242,7 @@ Veja o funcionamento completo da solução SafeHeat (Backend .NET):
 
 Entenda o contexto, problema, solução proposta e impacto social do SafeHeat no nosso pitch oficial:
 
-[🔗 Assista ao Pitch](https://github.com/felipesora)
+[🔗 Assista ao Pitch](https://www.youtube.com/watch?v=0mrh2BfIKto)
 
 ### ☕ Projeto Java (API para Aplicativo)
 
